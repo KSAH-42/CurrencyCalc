@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Threading.Tasks;
 
 namespace Calculator.Windows.Commands
 {
 	using Calculator.Data.Clients;
 	using Calculator.Windows.Controllers;
 
-	public class QueryAllCurrenciesCommand : Command
+	public class QueryAllCurrenciesCommand : AsyncCommand
 	{
 		private readonly CalculatorViewModel _viewModel = null;
 
@@ -27,7 +28,7 @@ namespace Calculator.Windows.Commands
 			return _viewModel.CanQueryCurrencies();
 		}
 
-		public async override void Execute( object parameter )
+		protected async override Task ExecuteAsync( object parameter )
 		{
 			_viewModel.ClearAllCurrencies();
 			_viewModel.ClearAmountConverted();
