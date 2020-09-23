@@ -17,15 +17,7 @@ namespace Calculator.Configuration
 
 
 
-		public static bool IsLoaded
-		{
-			get => s_configuration != null;
-		}
-
-
-
-
-		public static void Load()
+		public static void Load()  // public void static ReLoad()
 		{
 			s_configuration = ConfigurationManager.OpenExeConfiguration( ConfigurationUserLevel.None );
 		}
@@ -34,7 +26,7 @@ namespace Calculator.Configuration
 		{
 			if ( null != s_configuration )
 			{
-				s_configuration.Save( ConfigurationSaveMode.Full , true );
+				s_configuration?.Save();
 			}
 		}
 
