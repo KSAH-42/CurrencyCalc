@@ -35,5 +35,6 @@ In this section, you will find the tools and the technologies used during the de
 * C#
 * WPF
 * MVVM
+* REST client
 * MSTest
 * Design patterns
