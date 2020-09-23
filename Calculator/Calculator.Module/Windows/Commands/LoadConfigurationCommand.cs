@@ -4,14 +4,14 @@
 
 	public class LoadConfigurationCommand : Command
 	{
-		private readonly CalculatorViewModelConfigurationMapper _mapper = null;
+		private readonly CalculatorViewModelConfigurationMapper _configMapper = null;
 
 
 
 
 		public LoadConfigurationCommand( CalculatorViewModel viewModel )
 		{
-			_mapper = new CalculatorViewModelConfigurationMapper( viewModel );
+			_configMapper = new CalculatorViewModelConfigurationMapper( viewModel );
 		}
 
 
@@ -19,10 +19,10 @@
 
 		public override void Execute( object parameter )
 		{
-			_mapper.Load();
+			_configMapper.Load();
 
-			_mapper.MapClientSettings();
-			_mapper.MapCalculatorSettings();
+			_configMapper.MapClientSettings();
+			_configMapper.MapCalculatorSettings();
 		}
 	}
 }
