@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 
 namespace Calculator.Configuration
 {
@@ -19,14 +20,30 @@ namespace Calculator.Configuration
 
 		public static void Load()  // public void static ReLoad()
 		{
-			s_configuration = ConfigurationManager.OpenExeConfiguration( ConfigurationUserLevel.None );
+			try
+			{
+				s_configuration = ConfigurationManager.OpenExeConfiguration( ConfigurationUserLevel.None );
+			}
+			catch ( Exception ex )
+			{
+				System.Diagnostics.Debug.WriteLine( ex );
+			}
 		}
 
 		public static void Save()
 		{
 			if ( null != s_configuration )
 			{
-				s_configuration?.Save();
+				return;
+			}
+
+			try
+			{
+				s_configuration.Save();
+			}
+			catch ( Exception ex )
+			{
+				System.Diagnostics.Debug.WriteLine( ex );
 			}
 		}
 
