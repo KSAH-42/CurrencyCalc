@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Calculator.Windows.Commands
 {
@@ -18,6 +19,11 @@ namespace Calculator.Windows.Commands
 
 
 
+		public override bool CanExecute( object parameter )
+		{
+			return _viewModel.Sources.Any()
+				&& _viewModel.Targets.Any();
+		}
 
 		public override void Execute( object parameter )
 		{
