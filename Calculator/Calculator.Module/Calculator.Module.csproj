@@ -7,7 +7,7 @@
     <ProjectGuid>{6C6758D4-AAFE-429F-8BA4-ECFD31F01500}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Calculator.Module</RootNamespace>
+    <RootNamespace>Calculator</RootNamespace>
     <AssemblyName>Calculator.Module</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -57,6 +57,7 @@
     <Compile Include="Configuration\GlobalConfiguration.cs" />
     <Compile Include="Data\Clients\DTOs\CalculationResultsDto.cs" />
     <Compile Include="Data\Clients\DTOs\CurrencyInfoListDto.cs" />
+    <Compile Include="Data\Clients\DTOs\ExtensionsDtos.cs" />
     <Compile Include="Data\Clients\FrankFurterClient.cs" />
     <Compile Include="Data\Clients\FrankFurterUriFactory.cs" />
     <Compile Include="Data\Clients\HttpClientExtensions.cs" />

@@ -34,30 +34,5 @@ namespace Calculator.Data.Clients.DTOs
 			get;
 			set;
 		}
-
-
-
-
-		internal decimal GetRate( string currency )
-		{
-			if ( string.IsNullOrWhiteSpace( currency ) )
-			{
-				return 0;
-			}
-
-			var rates = Rates;
-
-			if ( null == rates )
-			{
-				return 0;
-			}
-
-			if ( rates.TryGetValue( currency , out decimal value ) )
-			{
-				return value;
-			}
-
-			return 0;
-		}
 	}
 }
