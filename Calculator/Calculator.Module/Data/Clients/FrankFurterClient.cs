@@ -45,7 +45,7 @@ namespace Calculator.Data.Clients
 
 		public async Task<decimal> CalculateCurrencyAsync( string source , string target , decimal amout )
 		{
-			var data = await _client.GetObjectAsync<CalculationResultsDto>( FrankFurterUriFactory.NewCalculateURI( source , target , amout ) );
+			var data = await _client.ReadAsync<CalculationResultsDto>( FrankFurterUriFactory.NewCalculateURI( source , target , amout ) );
 
 			return data != null ? data.GetRate( target ) : 0;
 		}
@@ -57,7 +57,7 @@ namespace Calculator.Data.Clients
 
 		public async Task<CurrencyList> ListAllCurrenciesAsync()
 		{
-			var elements = await _client.GetObjectAsync<CurrencyInfoListDto>( FrankFurterUriFactory.NewListAllCurrenciesURI() );
+			var elements = await _client.ReadAsync<CurrencyInfoListDto>( FrankFurterUriFactory.NewListAllCurrenciesURI() );
 
 			var results = new CurrencyList();
 

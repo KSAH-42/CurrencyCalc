@@ -7,7 +7,7 @@ namespace Calculator.Data.Clients
 {
 	public static class HttpClientExtensions
 	{
-		public static async Task<string> GetTextAsync( this HttpClient client , string uri )
+		public static async Task<string> ReadTextAsync( this HttpClient client , string uri )
 		{
 			if ( string.IsNullOrWhiteSpace( uri ) )
 			{
@@ -25,7 +25,7 @@ namespace Calculator.Data.Clients
 			}
 		}
 
-		public static async Task<T> GetObjectAsync<T>( this HttpClient client , string uri )
+		public static async Task<T> ReadAsync<T>( this HttpClient client , string uri )
 		{
 			if ( string.IsNullOrWhiteSpace( uri ) )
 			{
