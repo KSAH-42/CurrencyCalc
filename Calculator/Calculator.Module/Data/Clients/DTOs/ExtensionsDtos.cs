@@ -3,14 +3,14 @@ namespace Calculator.Data.Clients.DTOs
 {
 	internal static class ExtensionsDtos
 	{
-		public static decimal GetRate( this CalculationResultsDto dto , string currency )
+		public static decimal GetRate( this CalculationResultsDto results , string currency )
 		{
 			if ( string.IsNullOrWhiteSpace( currency ) )
 			{
 				return 0;
-			}
+			}				
 
-			var rates = dto.Rates;
+			var rates = results.Rates;
 
 			if ( null == rates )
 			{
