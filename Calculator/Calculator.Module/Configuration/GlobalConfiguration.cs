@@ -49,6 +49,17 @@ namespace Calculator.Configuration
 			return null;
 		}
 
+		public static TSection GetSection<TSection>( string name )
+			where TSection : ConfigurationSection
+		{
+			if ( s_configuration == null || string.IsNullOrWhiteSpace( name ) )
+			{
+				return null;
+			}
+
+			return s_configuration.GetSection( name ) as TSection;
+		}
+
 
 	}
 }
