@@ -13,7 +13,7 @@ namespace Calculator.Testing
 
 
 	[TestClass]
-	public class FrankFurterClientTestCalculation
+	public class CalculationTests
 	{
 		private IClient _client = null;
 
@@ -26,42 +26,42 @@ namespace Calculator.Testing
 
 		[TestMethod]
 		[Timeout( 5000 )]
-		public void TestCalculate1()
+		public void Should_Currency_Equal_Zero_case_1()
 		{
 			Assert.AreNotEqual<decimal>( 0 , _client.CalculateCurrency( "AUD" , "USD" , 1 ) );
 		}
 
 		[TestMethod]
 		[Timeout(5000)]
-		public void TestCalculate2()
+		public void Should_Currency_Equal_Zero_case_2()
 		{
 			Assert.AreNotEqual<decimal>( 0 , _client.CalculateCurrency( "USD" , "EUR" , 1 ) );
 		}
 
 		[TestMethod]
 		[Timeout( 5000 )]
-		public void TestCalculate3()
+		public void Should_Currency_Equal_Zero_case_3()
 		{
 			Assert.AreNotEqual<decimal>( 0 ,  _client.CalculateCurrency( "EUR" , "USD" , 1 ) );
 		}
 
 		[TestMethod]
 		[Timeout( 5000 )]
-		public void TestCalculate4()
+		public void Should_Currency_Equal_Zero_case_4()
 		{
 			Assert.AreNotEqual<decimal>( 0 , _client.CalculateCurrency( "USD" , "AUD" , 1 ) );
 		}
 
 		[TestMethod]
 		[Timeout( 5000 )]
-		public void TestCalculate5()
+		public void Should_Currency_Equal_Zero_case_5()
 		{
 			Assert.AreEqual<decimal>( 0 , _client.CalculateCurrency( "USD" , "AUD" , 0 ) );
 		}
 
 		[TestMethod]
 		[Timeout( 5000 )]
-		public void TestCalculate6()
+		public void Should_Currency_Equal_Zero_case_6()
 		{
 			Assert.AreEqual<decimal>( 0 , _client.CalculateCurrency( "AUD" , "USD" , 0 ) );
 		}

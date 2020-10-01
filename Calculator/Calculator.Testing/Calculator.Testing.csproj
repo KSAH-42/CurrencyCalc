@@ -49,9 +49,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrankFurterClientTestCalculation.cs" />
-    <Compile Include="FrankFurterClientTestFailures.cs" />
-    <Compile Include="FrankFurterClientTestQueries.cs" />
+    <Compile Include="CalculationTests.cs" />
+    <Compile Include="CalculationWithBadsArgsTests.cs" />
+    <Compile Include="ListAllCurrenciesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
